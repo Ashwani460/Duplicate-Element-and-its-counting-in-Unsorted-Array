@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{   
+    int n;
+    cout<<"Enter size of array"<<endl;
+    cin>>n;
+    int i,j;
+    int A[n];
+    cout<<"Enter the elements in sorted array"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin>>A[i];
+    }
+    for(i=0;i<n;i++)
+    {   
+        int count=1;
+        if(A[i]!=-1)
+        {
+          for(j=i+1;j<n;j++)
+          {
+            if(A[i]==A[j])
+            {
+                count++;
+                A[j]=-1;
+            }
+          }
+          if(count>1)        
+            cout<<"Repeating Number is"<<A[i]<<" "<<count<<" "<<"times"<<endl;   
+        }
+    }
+}
